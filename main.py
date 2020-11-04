@@ -15,7 +15,9 @@ def root():
 
 @app.route('/health', methods=['GET'])
 def res_health():
+    # https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers
     print(request.headers, file=sys.stderr)
+    print(request.body, file=sys.stderr)
     return "OK, I'm good."
 
 if __name__ == '__main__':
